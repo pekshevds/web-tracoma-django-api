@@ -27,7 +27,7 @@ class Warehouse(Directory):
 
 class Cargo(Directory):
     order = models.ForeignKey(
-        Order, related_name="cargo", on_delete=models.PROTECT,
+        Order, related_name="cargos", on_delete=models.PROTECT,
         verbose_name="Заказ")
     width = models.DecimalField(
         verbose_name="Ширина, см", max_digits=15, decimal_places=3)

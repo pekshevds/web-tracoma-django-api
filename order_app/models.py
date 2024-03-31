@@ -6,17 +6,17 @@ from main_app.services import ganerate_new_number
 
 class Contractor(Directory):
     address1 = models.CharField(verbose_name="Адрес", max_length=255,
-                                null=True, blank=True, default="")
+                                blank=True, default="")
     address2 = models.CharField(verbose_name="Адрес", max_length=255,
-                                null=True, blank=True, default="")
+                                blank=True, default="")
     address3 = models.CharField(verbose_name="Адрес", max_length=255,
-                                null=True, blank=True, default="")
+                                blank=True, default="")
     phone1 = models.CharField(verbose_name="Телефон", max_length=25,
-                              null=True, blank=True, default="")
+                              blank=True, default="")
     phone2 = models.CharField(verbose_name="Телефон", max_length=25,
-                              null=True, blank=True, default="")
+                              blank=True, default="")
     phone3 = models.CharField(verbose_name="Телефон", max_length=25,
-                              null=True, blank=True, default="")
+                              blank=True, default="")
 
     class Meta:
         verbose_name = "Контрагент"
@@ -33,7 +33,7 @@ class Order(Document):
     sender_name = models.CharField(
         verbose_name="Наименование отправителя", max_length=150, default="")
     sender_address = models.CharField(verbose_name="Адрес", max_length=255,
-                                      null=True, blank=True, default="")
+                                      blank=True, default="")
     sender_phone = models.CharField(verbose_name="Телефон", max_length=25,
                                     default="")
 
