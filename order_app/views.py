@@ -12,9 +12,9 @@ from order_app.serializers import (
 
 
 class ContractorView(APIView):
-    # authentication_classes = [authentication.TokenAuthentication]
-    # permission_classes = [permissions.IsAuthenticated]
-    permission_classes = [permissions.AllowAny]
+    authentication_classes = [authentication.TokenAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.AllowAny]
 
     def get(self, request) -> Response:
         queryset = Contractor.objects.all()
@@ -25,9 +25,9 @@ class ContractorView(APIView):
 
 
 class OrderView(APIView):
-    # authentication_classes = [authentication.TokenAuthentication]
-    # permission_classes = [permissions.IsAuthenticated]
-    permission_classes = [permissions.AllowAny]
+    authentication_classes = [authentication.TokenAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.AllowAny]
 
     def get(self, request) -> Response:
         queryset = Order.objects.all()

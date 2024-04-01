@@ -64,12 +64,14 @@ class Directory(Base):
         verbose_name="Наименование",
         max_length=150,
         null=True,
-        blank=True,
+        blank=False,
         db_index=True
     )
 
     def __str__(self) -> str:
-        return f"{self.name}"
+        if self.name:
+            return f"{self.name}"
+        return "<>"
 
     class Meta:
         abstract = True
