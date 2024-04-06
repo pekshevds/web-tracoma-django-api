@@ -35,3 +35,16 @@ class CargoView(APIView):
         response = {"data": serializer.data,
                     "success": True}
         return Response(response)
+
+    def post(self, request: HttpRequest) -> Response:
+        response = {"data": None,
+                    "success": False}
+        data = request.data.get("data")
+        if not data:
+            return Response(response)
+        serializer = CargoSerializer(data=data, many=True)
+        if serializer.is_valid(raise_exception=True):
+            serializer = CargoSerializer.create_or_update_from_data(data)
+            response = {"data": serializer.data,
+                        "success": True}
+        return Response(response)
